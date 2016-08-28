@@ -27,8 +27,8 @@ if args.debug:
     print("abs output file:", outfileStr)
 
 call(["node", "build/phase0/pyret.jarr",\
-      "--build-runnable", str(fileCommonDirectory / args.file),\
-      "--outfile", str(fileCommonDirectory / args.output),\
+      "--build-runnable", infileStr,\
+      "--outfile", outfileStr,\
       "--builtin-js-dir", "src/js/trove/",\
       "--builtin-arr-dir", "src/arr/trove",\
       "--require-config", "src/scripts/standalone-configA.json"\
