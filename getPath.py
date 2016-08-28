@@ -1,4 +1,5 @@
-import os, sys, argparse
+import argparse
+from pathlib import Path
 
 parser = argparse.ArgumentParser(description='Compile a pyret program.')
 parser.add_argument('file', type=str, help='input pyret file')
@@ -9,4 +10,5 @@ args = parser.parse_args()
 print("input file:", args.file)
 print("output file:", args.output)
 
-print(os.path.abspath(sys.argv[-1]))
+infile = Path(args.file)
+print(infile.resolve())
