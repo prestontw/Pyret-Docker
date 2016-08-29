@@ -10,7 +10,3 @@ ENV PYRET_HOME=/pyret-lang
 WORKDIR $PYRET_HOME
 
 RUN npm install
-
-ENV SRC_HOME=/opt/src
-RUN mkdir -p $SRC_HOME
-WORKDIR $SRC_HOME
