@@ -15,15 +15,13 @@ if args.debug:
     print("input file:", args.file)
     print("output file:", args.output)
 
-infile = Path(args.file)
-infileAbsPath = infile.resolve()
-fileCommonDirectory = infileAbsPath.parent
+filePrefix = "/opt/src/"
 
-sourcefile = fileCommonDirectory / args.file
-outfile = fileCommonDirectory / args.output
+sourcefile = Path(filePrefix + args.file)
+outfile = Path(filePrefix + args.output)
 compilefile = Path("/pyret-lang/build/phase0/pyret.jarr")
 
-pyretRoot = "./"
+pyretRoot = "/pyret-lang/"
 
 if args.debug:
     print("abs input file:", str(sourcefile))
@@ -33,8 +31,8 @@ if args.debug:
     print("compile file exists?", compilefile.exists())
 
 call(["node", pyretRoot + "build/phase0/pyret.jarr",
-      "--build-runnable", args.file,
-      "--outfile", args.output,
+      "--build-runnable", str(sourcefile),
+      "--outfile", str(outfile),
       "--builtin-js-dir", pyretRoot + "src/js/trove/",
       "--builtin-arr-dir", pyretRoot + "src/arr/trove",
       "--require-config", pyretRoot + "src/scripts/standalone-configA.json"

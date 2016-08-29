@@ -9,5 +9,3 @@ RUN npm install
 
 COPY getPath.py /usr/bin/pyretc
 RUN chmod a+x /usr/bin/pyretc
-
-RUN ls build/phase0
