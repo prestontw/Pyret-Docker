@@ -13,6 +13,13 @@ sudo docker run --rm -v <abs path to host dir>:opt/src pyret-compiler pyretc <fi
 ```
 sudo docker run --rm -v /home/john/src:/opt/src pyret-compiler pyretc test.arr -o a.out
 ```
+
+## Running your Pyret Program
+Unfortunately, this requires some copying, similar to compiling.
+If we mount the directory containing the executable to `/opt/src`,
+then we can't find the output file.
+If we mount to `/pyret-lang`, then we mask and can't find `requirejs`.
+
 ## Troubleshooting
 Remember to start the docker daemon:
 ```
