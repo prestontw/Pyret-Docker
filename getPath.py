@@ -12,6 +12,7 @@ parser.add_argument('--debug', action="store_true", help='debug compiling script
 args = parser.parse_args()
 
 if args.debug:
+    call(["node", "-v"])
     print("input file:", args.file)
     print("output file:", args.output)
 
