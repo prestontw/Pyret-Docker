@@ -21,6 +21,7 @@ fileCommonDirectory = infileAbsPath.parent
 
 sourcefile = fileCommonDirectory / args.file
 outfile = fileCommonDirectory / args.output
+compilefile = Path("/pyret-lang/build/phase0/pyret.jarr")
 
 pyretRoot = ""
 
@@ -29,6 +30,7 @@ if args.debug:
     print("abs output file:", str(outfile))
     print("input file exists?", sourcefile.exists())
     print("output file exists?", outfile.exists())
+    print("compile file exists?", compilefile.exists())
 
 call(["node", pyretRoot + "build/phase0/pyret.jarr",
       "--build-runnable", args.file,
