@@ -22,7 +22,7 @@ fileCommonDirectory = infileAbsPath.parent
 sourcefile = fileCommonDirectory / args.file
 outfile = fileCommonDirectory / args.output
 
-pyretRoot = "/pyret-lang/"
+pyretRoot = ""
 
 if args.debug:
     print("abs input file:", str(sourcefile))
