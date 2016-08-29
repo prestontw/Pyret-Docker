@@ -12,7 +12,7 @@ sudo docker run --rm -v <absolute path to host directory>:<absolute path to dock
 ```
 ### Example
 ```
-here you are!
+sudo docker run --rm -v /home/john/src:/opt/src pyret-image pyretc test.arr -o a.out
 ```
 ## Troubleshooting
 Remember to start the docker daemon:
