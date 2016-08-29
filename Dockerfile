@@ -10,7 +10,7 @@ ENV PYRET_HOME=/pyret-lang
 WORKDIR $PYRET_HOME
 
 RUN npm install
-# RUN make
-# RUN make test
 
-CMD /usr/bin/pyretc
+ENV SRC_HOME=/opt/src
+RUN mkdir -p $SRC_HOME
+WORKDIR $SRC_HOME

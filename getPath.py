@@ -22,14 +22,16 @@ fileCommonDirectory = infileAbsPath.parent
 infileStr = str(fileCommonDirectory / args.file)
 outfileStr = str(fileCommonDirectory / args.output)
 
+pyretRoot = "/pyret-lang/"
+
 if args.debug:
     print("abs input file:", infileStr)
     print("abs output file:", outfileStr)
 
-call(["node", "build/phase0/pyret.jarr",\
+call(["node", pyretRoot + "build/phase0/pyret.jarr",\
       "--build-runnable", infileStr,\
       "--outfile", outfileStr,\
-      "--builtin-js-dir", "src/js/trove/",\
-      "--builtin-arr-dir", "src/arr/trove",\
-      "--require-config", "src/scripts/standalone-configA.json"\
+      "--builtin-js-dir", pyretRoot + "src/js/trove/",\
+      "--builtin-arr-dir", pyretRoot + "src/arr/trove",\
+      "--require-config", pyretRoot + "src/scripts/standalone-configA.json"\
       ])
