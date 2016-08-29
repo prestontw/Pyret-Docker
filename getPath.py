@@ -23,7 +23,7 @@ sourcefile = fileCommonDirectory / args.file
 outfile = fileCommonDirectory / args.output
 compilefile = Path("/pyret-lang/build/phase0/pyret.jarr")
 
-pyretRoot = ""
+pyretRoot = "/pyret-lang/"
 
 if args.debug:
     print("abs input file:", str(sourcefile))
