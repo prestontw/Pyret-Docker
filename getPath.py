@@ -41,4 +41,5 @@ call(["node", pyretRoot + "build/phase0/pyret.jarr",
       "--require-config", pyretRoot + "src/scripts/standalone-configA.json"
       ])
 
-call(["cp", pyretRoot + args.output, str(outfile)])
+if Path(pyretRoot + args.output).exists():
+    call(["cp", pyretRoot + args.output, str(outfile)])
