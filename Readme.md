@@ -23,6 +23,8 @@ You might need to add your user to the docker group,
 but I prefer to use sudo as explained in this article:
 <link>http://www.projectatomic.io/blog/2015/08/why-we-dont-let-non-root-users-run-docker-in-centos-fedora-or-rhel/</link>
 
-### Cannot find module 'pyret-lang/build/phase0/pyret.jarr'
-This stems from not running make, I would guess.
-I'll try adding it back in and seeing what happens.
+### Path must be a string
+I have encountered this error all over this place.
+It stops make from running,
+and it finally has stopped compilation from working.
+I will try to resolve it and see what happens.
