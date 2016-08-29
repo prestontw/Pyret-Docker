@@ -30,10 +30,15 @@ if args.debug:
     print("output file exists?", outfile.exists())
     print("compile file exists?", compilefile.exists())
 
+# copy file over
+call(["cp", str(sourcefile), pyretRoot + args.file])
+
 call(["node", pyretRoot + "build/phase0/pyret.jarr",
-      "--build-runnable", str(sourcefile),
-      "--outfile", str(outfile),
+      "--build-runnable", args.file,
+      "--outfile", args.output,
       "--builtin-js-dir", pyretRoot + "src/js/trove/",
       "--builtin-arr-dir", pyretRoot + "src/arr/trove",
       "--require-config", pyretRoot + "src/scripts/standalone-configA.json"
       ])
+
+call(["cp", pyretRoot + args.output, str(outfile)])
