@@ -22,3 +22,7 @@ sudo systemctl start docker
 You might need to add your user to the docker group,
 but I prefer to use sudo as explained in this article:
 <link>http://www.projectatomic.io/blog/2015/08/why-we-dont-let-non-root-users-run-docker-in-centos-fedora-or-rhel/</link>
+
+### Cannot find import dependency("file", [list: "<abs path to sourcec file"])
+I can't figure this error out either.
+Running pyretc in debug mode confirms that the input file exists...
