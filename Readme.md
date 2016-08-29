@@ -24,7 +24,5 @@ but I prefer to use sudo as explained in this article:
 <link>http://www.projectatomic.io/blog/2015/08/why-we-dont-let-non-root-users-run-docker-in-centos-fedora-or-rhel/</link>
 
 ### Path must be a string
-I have encountered this error all over this place.
-It stops make from running,
-and it finally has stopped compilation from working.
-I will try to resolve it and see what happens.
+Try a different version of Node.
+Version `5.10.1` works for sure.
