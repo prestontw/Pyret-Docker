@@ -19,19 +19,21 @@ infile = Path(args.file)
 infileAbsPath = infile.resolve()
 fileCommonDirectory = infileAbsPath.parent
 
-infileStr = str(fileCommonDirectory / args.file)
-outfileStr = str(fileCommonDirectory / args.output)
+sourcefile = fileCommonDirectory / args.file
+outfile = fileCommonDirectory / args.output
 
 pyretRoot = "/pyret-lang/"
 
 if args.debug:
-    print("abs input file:", infileStr)
-    print("abs output file:", outfileStr)
+    print("abs input file:", str(sourcefile))
+    print("abs output file:", str(outfile))
+    print("input file exists?", sourcefile.exists())
+    print("output file exists?", outfile.exists())
 
-call(["node", pyretRoot + "build/phase0/pyret.jarr",\
-      "--build-runnable", infileStr,\
-      "--outfile", outfileStr,\
-      "--builtin-js-dir", pyretRoot + "src/js/trove/",\
-      "--builtin-arr-dir", pyretRoot + "src/arr/trove",\
-      "--require-config", pyretRoot + "src/scripts/standalone-configA.json"\
+call(["node", pyretRoot + "build/phase0/pyret.jarr",
+      "--build-runnable", str(sourcefile),
+      "--outfile", str(outfile),
+      "--builtin-js-dir", pyretRoot + "src/js/trove/",
+      "--builtin-arr-dir", pyretRoot + "src/arr/trove",
+      "--require-config", pyretRoot + "src/scripts/standalone-configA.json"
       ])
