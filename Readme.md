@@ -7,11 +7,12 @@ sudo docker build -t pyret-compiler .
 
 ## Compiling your Pyret Program
 ```
-sudo docker run --rm -v <abs path to host dir>:opt/src pyret-compiler pyretc <file to compile>
+sudo docker run --rm -v <abs path to host dir>:/opt/src pyret-compiler pyretc <file to compile>
 ```
 ### Example
 ```
 sudo docker run --rm -v /home/john/src:/opt/src pyret-compiler pyretc test.arr -o a.out
+sudo docker run --rm -v $(pwd):/opt/src pyret-compiler pyretc test.arr -o a.out
 ```
 
 ## Running your Pyret Program
