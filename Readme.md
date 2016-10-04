@@ -34,3 +34,7 @@ but I prefer to use sudo as explained in this article:
 ### Path must be a string
 Try a different version of Node.
 Version `5.10.1` works for sure.
+
+### Unknown import type: shared-gdrive
+Weird discrepancy between CPO and CLI implementations.
+Maybe go to the link, copy and paste into a file in the working directory.

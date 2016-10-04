@@ -8,6 +8,8 @@ RUN n 5.10.1
 ENV PYRET_HOME=/pyret-lang
 WORKDIR $PYRET_HOME
 
+RUN git checkout horizon
+
 RUN npm install
 RUN make
 # RUN make test
