@@ -1,3 +1,5 @@
+Archiving since Pyret is now distributed as an [npm package](https://www.npmjs.com/package/pyret)
+
 # Pyret Language Docker
 
 ## Building the Docker Image
